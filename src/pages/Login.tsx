@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Crown, Mail, Lock, Eye, EyeOff, ArrowRight } from 'lucide-react';
-import { useAuth } from '../context/AuthContext';
+import { useAuth } from '../hooks/useAuth';
 
 export default function Login() {
   const { signIn, signUp, isDemoMode } = useAuth();

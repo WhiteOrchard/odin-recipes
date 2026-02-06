@@ -1,11 +1,5 @@
-import { createContext, useContext, useState, useEffect, type ReactNode } from 'react';
-
-interface ThemeContextType {
-  dark: boolean;
-  toggle: () => void;
-}
-
-const ThemeContext = createContext<ThemeContextType>({ dark: false, toggle: () => {} });
+import { useState, useEffect, type ReactNode } from 'react';
+import { ThemeContext } from './themeContextDef';
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
   const [dark, setDark] = useState(() => {
@@ -24,5 +18,3 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     </ThemeContext.Provider>
   );
 }
-
-export const useTheme = () => useContext(ThemeContext);

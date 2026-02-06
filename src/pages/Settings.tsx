@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useTheme } from '../context/ThemeContext';
+import { useTheme } from '../hooks/useTheme';
 import { Moon, Sun, Bell, Shield, Globe, User, Building2, Save } from 'lucide-react';
 import { clsx } from 'clsx';
 

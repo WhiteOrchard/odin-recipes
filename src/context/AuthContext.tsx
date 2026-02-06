@@ -1,26 +1,7 @@
-import { createContext, useContext, useState, useEffect, type ReactNode } from 'react';
-import type { Session, User } from '@supabase/supabase-js';
+import { useState, useEffect, type ReactNode } from 'react';
+import type { Session } from '@supabase/supabase-js';
 import { supabase, isDemoMode } from '../lib/supabase';
-
-interface AuthContextType {
-  session: Session | null;
-  user: User | null;
-  loading: boolean;
-  signIn: (email: string, password: string) => Promise<{ error: Error | null }>;
-  signUp: (email: string, password: string) => Promise<{ error: Error | null }>;
-  signOut: () => Promise<void>;
-  isDemoMode: boolean;
-}
-
-const AuthContext = createContext<AuthContextType>({
-  session: null,
-  user: null,
-  loading: true,
-  signIn: async () => ({ error: null }),
-  signUp: async () => ({ error: null }),
-  signOut: async () => {},
-  isDemoMode: false,
-});
+import { AuthContext } from './authContextDef';
 
 // A fake session for demo mode (when Supabase is not configured)
 const DEMO_SESSION: Session = {
@@ -46,7 +27,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     if (isDemoMode) {
-      // In demo mode, auto-login after a short delay to show the loading screen
       const timer = setTimeout(() => {
         setSession(DEMO_SESSION);
         setLoading(false);
@@ -54,7 +34,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       return () => clearTimeout(timer);
     }
 
-    // Real Supabase auth
     supabase.auth.getSession().then(({ data: { session } }) => {
       setSession(session);
       setLoading(false);
@@ -100,5 +79,3 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     </AuthContext.Provider>
   );
 }
-
-export const useAuth = () => useContext(AuthContext);

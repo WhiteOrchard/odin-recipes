@@ -12,7 +12,8 @@ import Settings from './pages/Settings';
 import Documents from './pages/Documents';
 import FloorMap from './pages/FloorMap';
 import Login from './pages/Login';
-import { AuthProvider, useAuth } from './context/AuthContext';
+import { AuthProvider } from './context/AuthContext';
+import { useAuth } from './hooks/useAuth';
 
 function ProtectedApp() {
   const { session, loading } = useAuth();

@@ -1,5 +1,5 @@
 import { Bell, Search, Moon, Sun, User } from 'lucide-react';
-import { useTheme } from '../context/ThemeContext';
+import { useTheme } from '../hooks/useTheme';
 import { useState } from 'react';
 
 export default function Header() {
