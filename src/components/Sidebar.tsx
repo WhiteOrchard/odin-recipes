@@ -7,7 +7,6 @@ import {
   Wrench,
   CalendarDays,
   Settings,
-  Crown,
   ChevronLeft,
   ChevronRight,
   FileText,
@@ -41,9 +40,11 @@ export default function Sidebar() {
     >
       {/* Logo */}
       <div className="flex h-16 items-center gap-3 border-b border-slate-200 px-4 dark:border-slate-700">
-        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-yolk-500 to-yolk-700 text-white">
-          <Crown size={20} />
-        </div>
+        <img
+          src="/brand/logos/Logo_Concrete_Button_Yellow.svg"
+          alt="Concrete Logo"
+          className="h-9 w-9 shrink-0"
+        />
         {!collapsed && (
           <div className="overflow-hidden">
             <h1 className="font-display text-lg font-bold tracking-tight text-concrete-900 dark:text-white">

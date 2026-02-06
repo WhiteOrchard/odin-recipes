@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Crown, Mail, Lock, Eye, EyeOff, ArrowRight } from 'lucide-react';
+import { Mail, Lock, Eye, EyeOff, ArrowRight } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { APP_NAME, APP_TAGLINE, APP_DESCRIPTION, COPYRIGHT, DEMO_EMAIL } from '../brand/constants';
 
@@ -37,9 +37,11 @@ export default function Login() {
       {/* Left side - branding */}
       <div className="hidden w-1/2 flex-col justify-between bg-gradient-to-br from-concrete-900 via-concrete-800 to-concrete-950 p-12 lg:flex">
         <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-yolk-400 to-yolk-600 text-white">
-            <Crown size={22} />
-          </div>
+          <img
+            src="/brand/logos/Logo_Concrete_Button_Yellow.svg"
+            alt="Concrete Logo"
+            className="h-10 w-10"
+          />
           <span className="font-display text-xl font-bold text-white">{APP_NAME}</span>
         </div>
 
@@ -74,9 +76,11 @@ export default function Login() {
       <div className="flex w-full flex-col items-center justify-center bg-slate-50 px-6 dark:bg-concrete-900 lg:w-1/2">
         {/* Mobile logo */}
         <div className="mb-8 flex items-center gap-3 lg:hidden">
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-yolk-400 to-yolk-600 text-white">
-            <Crown size={22} />
-          </div>
+          <img
+            src="/brand/logos/Logo_Concrete_Button_Yellow.svg"
+            alt="Concrete Logo"
+            className="h-10 w-10"
+          />
           <span className="font-display text-xl font-bold text-slate-900 dark:text-white">{APP_NAME}</span>
         </div>
 
