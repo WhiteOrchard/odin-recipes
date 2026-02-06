@@ -45,6 +45,7 @@ export interface PaymentRecord {
   amount: number;
   status: 'paid' | 'pending' | 'overdue';
   method: string;
+  tenantId?: string; // Optional when embedded in Tenant.paymentHistory
 }
 
 export interface MaintenanceRequest {

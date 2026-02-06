@@ -118,6 +118,7 @@ export function paymentFromDb(row: PaymentRow): PaymentRecord {
     amount: row.amount,
     status: row.status as PaymentRecord['status'],
     method: row.method,
+    tenantId: row.tenant_id,
   };
 }
 
@@ -128,6 +129,7 @@ export function paymentToDb(payment: Partial<PaymentRecord>): Partial<PaymentRow
     amount: payment.amount,
     status: payment.status,
     method: payment.method,
+    tenant_id: payment.tenantId,
   };
 }
 
