@@ -1,4 +1,4 @@
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import {
   ArrowLeft, MapPin, Bed, Bath, Maximize, Calendar, Star,
   Home, Shield, Wifi, Car, Wine, Waves, TreePine, Crown,
@@ -28,7 +28,8 @@ export default function PropertyDetail() {
   const { id } = useParams<{ id: string }>();
   const property = properties.find(p => p.id === id);
   const tenant = property?.tenantId ? tenants.find(t => t.id === property.tenantId) : null;
-  const [activeTab, setActiveTab] = useState<'overview' | 'amenities' | 'financials'>('overview');
+  const navigate = useNavigate();
+  const [activeTab, setActiveTab] = useState<'overview' | 'amenities' | 'financials' | 'floor-plans'>('overview');
 
   if (!property) {
     return (
@@ -38,7 +39,13 @@ export default function PropertyDetail() {
     );
   }
 
-  const tabs = ['overview', 'amenities', 'financials'] as const;
+  const tabs = ['overview', 'amenities', 'financials', 'floor-plans'] as const;
+  const tabLabels: Record<string, string> = {
+    overview: 'Overview',
+    amenities: 'Amenities',
+    financials: 'Financials',
+    'floor-plans': 'Floor Plans',
+  };
 
   return (
     <div className="space-y-6">
@@ -114,15 +121,21 @@ export default function PropertyDetail() {
           {tabs.map(tab => (
             <button
               key={tab}
-              onClick={() => setActiveTab(tab)}
+              onClick={() => {
+                if (tab === 'floor-plans') {
+                  navigate(`/floor-plans/${property.id}`);
+                } else {
+                  setActiveTab(tab);
+                }
+              }}
               className={clsx(
-                'border-b-2 pb-3 text-sm font-medium capitalize transition-colors',
+                'border-b-2 pb-3 text-sm font-medium transition-colors',
                 activeTab === tab
                   ? 'border-yolk-500 text-yolk-700 dark:text-yolk-400'
                   : 'border-transparent text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-white'
               )}
             >
-              {tab}
+              {tabLabels[tab]}
             </button>
           ))}
         </div>

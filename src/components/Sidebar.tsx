@@ -21,7 +21,7 @@ const navItems = [
   { to: '/properties', icon: Building2, label: 'Properties' },
   { to: '/tenants', icon: Users, label: 'Tenants' },
   { to: '/documents', icon: FileText, label: 'Documents' },
-  { to: '/floor-map', icon: Map, label: 'Floor Map' },
+  { to: '/floor-plans', icon: Map, label: 'Floor Plans' },
   { to: '/financials', icon: DollarSign, label: 'Financials' },
   { to: '/maintenance', icon: Wrench, label: 'Maintenance' },
   { to: '/calendar', icon: CalendarDays, label: 'Calendar' },

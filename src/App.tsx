@@ -12,7 +12,7 @@ import Maintenance from './pages/Maintenance';
 import Calendar from './pages/Calendar';
 import Settings from './pages/Settings';
 import Documents from './pages/Documents';
-import FloorMap from './pages/FloorMap';
+import FloorPlan from './pages/FloorPlan';
 import Login from './pages/Login';
 import { AuthProvider, useAuth } from './context/AuthContext';
 
@@ -45,7 +45,8 @@ function ProtectedApp() {
         <Route path="maintenance" element={<Maintenance />} />
         <Route path="calendar" element={<Calendar />} />
         <Route path="documents" element={<Documents />} />
-        <Route path="floor-map" element={<FloorMap />} />
+        <Route path="floor-plans" element={<FloorPlan />} />
+        <Route path="floor-plans/:propertyId" element={<FloorPlan />} />
         <Route path="settings" element={<Settings />} />
       </Route>
     </Routes>
