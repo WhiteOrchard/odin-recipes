@@ -23,9 +23,9 @@ There's currently a known compatibility issue between Tailwind CSS v4 and Vitest
 Error: require() of ES Module /node_modules/@csstools/css-calc/dist/index.mjs not supported
 ```
 
-**Impact:** Cannot currently test React components that import CSS.
+**Impact:** Cannot currently test React components, services, or hooks due to transitive CSS imports through the module graph.
 
-**Workaround:** Basic unit tests for utilities, services, and hooks work fine. Component testing will be added once this issue is resolved.
+**Workaround:** Only isolated constants and utilities with zero imports can be tested. Service layer tests will be added once this issue is resolved.
 
 **Tracking:**
 - https://github.com/tailwindlabs/tailwindcss/issues/...
@@ -47,6 +47,6 @@ npm run test:coverage
 ## Current Tests
 
 - ✅ Smoke tests (brand constants validation)
-- ⏳ Component tests (blocked by TailwindCSS issue)
-- ⏳ Hook tests (pending)
-- ⏳ Service layer tests (pending Phase 1)
+- ⏳ Component tests (blocked by Tailwind CSS v4 issue)
+- ⏳ Hook tests (blocked by Tailwind CSS v4 issue)
+- ⏳ Service layer tests (blocked by Tailwind CSS v4 issue - will be added once resolved)
