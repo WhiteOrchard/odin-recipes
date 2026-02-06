@@ -1,6 +1,7 @@
 import { createContext, useContext, useState, useEffect, type ReactNode } from 'react';
 import type { Session, User } from '@supabase/supabase-js';
 import { supabase, isDemoMode } from '../lib/supabase';
+import { DEMO_EMAIL } from '../brand/constants';
 
 interface AuthContextType {
   session: Session | null;
@@ -31,11 +32,11 @@ const DEMO_SESSION: Session = {
   token_type: 'bearer',
   user: {
     id: 'demo-user-id',
-    email: 'v.sterling@luxeestates.com',
+    email: DEMO_EMAIL,
     aud: 'authenticated',
     role: 'authenticated',
     app_metadata: {},
-    user_metadata: { full_name: 'Victoria Sterling' },
+    user_metadata: { full_name: 'Demo User' },
     created_at: new Date().toISOString(),
   },
 };

@@ -24,7 +24,7 @@ export default function Financials() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="font-serif text-2xl font-bold text-slate-900 dark:text-white">Financial Analytics</h1>
+        <h1 className="font-display text-2xl font-bold text-slate-900 dark:text-white">Financial Analytics</h1>
         <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">12-month financial performance overview</p>
       </div>
 
@@ -37,8 +37,8 @@ export default function Financials() {
       </div>
 
       {/* Revenue vs Expenses Bar Chart */}
-      <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-700 dark:bg-mansion-800">
-        <h2 className="font-serif text-lg font-semibold text-slate-900 dark:text-white">Monthly Revenue vs Expenses</h2>
+      <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-700 dark:bg-concrete-800">
+        <h2 className="font-display text-lg font-semibold text-slate-900 dark:text-white">Monthly Revenue vs Expenses</h2>
         <p className="mb-4 text-sm text-slate-500 dark:text-slate-400">Side-by-side comparison over the past 12 months</p>
         <div className="h-80">
           <ResponsiveContainer width="100%" height="100%">
@@ -57,8 +57,8 @@ export default function Financials() {
 
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
         {/* Profit trend */}
-        <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-700 dark:bg-mansion-800">
-          <h2 className="font-serif text-lg font-semibold text-slate-900 dark:text-white">Profit Trend</h2>
+        <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-700 dark:bg-concrete-800">
+          <h2 className="font-display text-lg font-semibold text-slate-900 dark:text-white">Profit Trend</h2>
           <p className="mb-4 text-sm text-slate-500 dark:text-slate-400">Monthly net income over time</p>
           <div className="h-64">
             <ResponsiveContainer width="100%" height="100%">
@@ -74,8 +74,8 @@ export default function Financials() {
         </div>
 
         {/* Property revenue breakdown */}
-        <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-700 dark:bg-mansion-800">
-          <h2 className="font-serif text-lg font-semibold text-slate-900 dark:text-white">Revenue by Property</h2>
+        <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-700 dark:bg-concrete-800">
+          <h2 className="font-display text-lg font-semibold text-slate-900 dark:text-white">Revenue by Property</h2>
           <p className="mb-4 text-sm text-slate-500 dark:text-slate-400">Monthly rental income per occupied property</p>
           <div className="space-y-3">
             {propertyRevenue.map(p => (
@@ -86,7 +86,7 @@ export default function Financials() {
                 </div>
                 <div className="mt-1.5 h-2 overflow-hidden rounded-full bg-slate-100 dark:bg-slate-700">
                   <div
-                    className="h-full rounded-full bg-gradient-to-r from-gold-400 to-gold-600"
+                    className="h-full rounded-full bg-gradient-to-r from-yolk-400 to-yolk-600"
                     style={{ width: `${(p.revenue / propertyRevenue[0].revenue) * 100}%` }}
                   />
                 </div>

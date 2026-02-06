@@ -16,11 +16,11 @@ export default function Tenants() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="font-serif text-2xl font-bold text-slate-900 dark:text-white">Tenants</h1>
+        <h1 className="font-display text-2xl font-bold text-slate-900 dark:text-white">Tenants</h1>
         <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">{tenants.length} active tenants across your portfolio</p>
       </div>
 
-      <div className="flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2 dark:border-slate-600 dark:bg-mansion-800">
+      <div className="flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2 dark:border-slate-600 dark:bg-concrete-800">
         <Search size={18} className="text-slate-400" />
         <input
           type="text"
@@ -40,7 +40,7 @@ export default function Tenants() {
           return (
             <div
               key={tenant.id}
-              className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm dark:border-slate-700 dark:bg-mansion-800"
+              className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm dark:border-slate-700 dark:bg-concrete-800"
             >
               {/* Tenant header */}
               <button
@@ -48,7 +48,7 @@ export default function Tenants() {
                 onClick={() => setExpandedId(expanded ? null : tenant.id)}
               >
                 <div className="flex items-center gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-gold-400 to-gold-600 text-sm font-bold text-white">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-yolk-400 to-yolk-600 text-sm font-bold text-white">
                     {tenant.avatar}
                   </div>
                   <div>
@@ -60,7 +60,7 @@ export default function Tenants() {
                 </div>
                 <div className="flex items-center gap-4">
                   <div className="hidden text-right sm:block">
-                    <p className="text-sm font-semibold text-gold-600 dark:text-gold-400">
+                    <p className="text-sm font-semibold text-yolk-600 dark:text-yolk-400">
                       {formatFullCurrency(tenant.monthlyRent)}/mo
                     </p>
                     <p className="text-xs text-slate-500 dark:text-slate-400">

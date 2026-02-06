@@ -96,7 +96,7 @@ export default function Documents() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="font-serif text-2xl font-bold text-slate-900 dark:text-white">Documents</h1>
+        <h1 className="font-display text-2xl font-bold text-slate-900 dark:text-white">Documents</h1>
         <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
           Upload and manage contracts, photos, inspection reports, and more
         </p>
@@ -104,19 +104,19 @@ export default function Documents() {
 
       {/* Quick stats */}
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
-        <div className="rounded-xl border border-slate-200 bg-white p-4 dark:border-slate-700 dark:bg-mansion-800">
+        <div className="rounded-xl border border-slate-200 bg-white p-4 dark:border-slate-700 dark:bg-concrete-800">
           <p className="text-xs text-slate-500 dark:text-slate-400">Total Documents</p>
           <p className="text-2xl font-bold text-slate-900 dark:text-white">{stats.total}</p>
         </div>
-        <div className="rounded-xl border border-slate-200 bg-white p-4 dark:border-slate-700 dark:bg-mansion-800">
+        <div className="rounded-xl border border-slate-200 bg-white p-4 dark:border-slate-700 dark:bg-concrete-800">
           <p className="text-xs text-slate-500 dark:text-slate-400">Contracts</p>
           <p className="text-2xl font-bold text-blue-600 dark:text-blue-400">{stats.contracts}</p>
         </div>
-        <div className="rounded-xl border border-slate-200 bg-white p-4 dark:border-slate-700 dark:bg-mansion-800">
+        <div className="rounded-xl border border-slate-200 bg-white p-4 dark:border-slate-700 dark:bg-concrete-800">
           <p className="text-xs text-slate-500 dark:text-slate-400">Photos</p>
           <p className="text-2xl font-bold text-emerald-600 dark:text-emerald-400">{stats.photos}</p>
         </div>
-        <div className="rounded-xl border border-slate-200 bg-white p-4 dark:border-slate-700 dark:bg-mansion-800">
+        <div className="rounded-xl border border-slate-200 bg-white p-4 dark:border-slate-700 dark:bg-concrete-800">
           <p className="text-xs text-slate-500 dark:text-slate-400">Inspections</p>
           <p className="text-2xl font-bold text-amber-600 dark:text-amber-400">{stats.inspections}</p>
         </div>
@@ -130,16 +130,16 @@ export default function Documents() {
         className={clsx(
           'flex flex-col items-center justify-center rounded-xl border-2 border-dashed p-8 transition-colors',
           dragOver
-            ? 'border-gold-400 bg-gold-50 dark:border-gold-500 dark:bg-gold-900/20'
-            : 'border-slate-200 bg-white hover:border-slate-300 dark:border-slate-600 dark:bg-mansion-800 dark:hover:border-slate-500'
+            ? 'border-yolk-400 bg-yolk-50 dark:border-yolk-500 dark:bg-yolk-900/20'
+            : 'border-slate-200 bg-white hover:border-slate-300 dark:border-slate-600 dark:bg-concrete-800 dark:hover:border-slate-500'
         )}
       >
-        <Upload size={32} className={dragOver ? 'text-gold-500' : 'text-slate-400'} />
+        <Upload size={32} className={dragOver ? 'text-yolk-500' : 'text-slate-400'} />
         <p className="mt-3 text-sm font-medium text-slate-700 dark:text-slate-300">
           Drag and drop files here, or{' '}
           <button
             onClick={() => fileInputRef.current?.click()}
-            className="text-gold-600 hover:text-gold-700 dark:text-gold-400"
+            className="text-yolk-600 hover:text-yolk-700 dark:text-yolk-400"
           >
             browse
           </button>
@@ -153,7 +153,7 @@ export default function Documents() {
             <select
               value={uploadCategory}
               onChange={e => setUploadCategory(e.target.value as DocCategory)}
-              className="ml-2 rounded-lg border border-slate-200 bg-white px-2 py-1 text-xs dark:border-slate-600 dark:bg-mansion-900 dark:text-white"
+              className="ml-2 rounded-lg border border-slate-200 bg-white px-2 py-1 text-xs dark:border-slate-600 dark:bg-concrete-900 dark:text-white"
             >
               {Object.entries(categoryConfig).map(([key, conf]) => (
                 <option key={key} value={key}>{conf.label}</option>
@@ -165,7 +165,7 @@ export default function Documents() {
             <select
               value={uploadProperty}
               onChange={e => setUploadProperty(e.target.value)}
-              className="ml-2 rounded-lg border border-slate-200 bg-white px-2 py-1 text-xs dark:border-slate-600 dark:bg-mansion-900 dark:text-white"
+              className="ml-2 rounded-lg border border-slate-200 bg-white px-2 py-1 text-xs dark:border-slate-600 dark:bg-concrete-900 dark:text-white"
             >
               {properties.map(p => (
                 <option key={p.id} value={p.id}>{p.name}</option>
@@ -186,7 +186,7 @@ export default function Documents() {
       {/* Search and filters */}
       <div className="space-y-3">
         <div className="flex gap-2">
-          <div className="flex flex-1 items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2 dark:border-slate-600 dark:bg-mansion-800">
+          <div className="flex flex-1 items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2 dark:border-slate-600 dark:bg-concrete-800">
             <Search size={18} className="text-slate-400" />
             <input
               type="text"
@@ -201,7 +201,7 @@ export default function Documents() {
             className={clsx(
               'flex items-center gap-1.5 rounded-lg border px-3 py-2 text-sm font-medium',
               showFilters
-                ? 'border-gold-300 bg-gold-50 text-gold-700 dark:border-gold-700 dark:bg-gold-900/30 dark:text-gold-400'
+                ? 'border-yolk-300 bg-yolk-50 text-yolk-700 dark:border-yolk-700 dark:bg-yolk-900/30 dark:text-yolk-400'
                 : 'border-slate-200 text-slate-600 hover:bg-slate-50 dark:border-slate-600 dark:text-slate-300'
             )}
           >
@@ -211,13 +211,13 @@ export default function Documents() {
           </button>
         </div>
         {showFilters && (
-          <div className="flex flex-wrap gap-3 rounded-lg border border-slate-200 bg-white p-4 dark:border-slate-700 dark:bg-mansion-800">
+          <div className="flex flex-wrap gap-3 rounded-lg border border-slate-200 bg-white p-4 dark:border-slate-700 dark:bg-concrete-800">
             <div>
               <label className="mb-1 block text-xs font-medium text-slate-500 dark:text-slate-400">Category</label>
               <select
                 value={categoryFilter}
                 onChange={e => setCategoryFilter(e.target.value as DocCategory | 'all')}
-                className="rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-sm dark:border-slate-600 dark:bg-mansion-900 dark:text-white"
+                className="rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-sm dark:border-slate-600 dark:bg-concrete-900 dark:text-white"
               >
                 <option value="all">All Categories</option>
                 {Object.entries(categoryConfig).map(([key, conf]) => (
@@ -230,7 +230,7 @@ export default function Documents() {
               <select
                 value={propertyFilter}
                 onChange={e => setPropertyFilter(e.target.value)}
-                className="rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-sm dark:border-slate-600 dark:bg-mansion-900 dark:text-white"
+                className="rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-sm dark:border-slate-600 dark:bg-concrete-900 dark:text-white"
               >
                 <option value="all">All Properties</option>
                 {properties.map(p => (
@@ -252,7 +252,7 @@ export default function Documents() {
           return (
             <div
               key={doc.id}
-              className="group flex items-center gap-4 rounded-xl border border-slate-200 bg-white p-4 shadow-sm transition-colors hover:bg-slate-50 dark:border-slate-700 dark:bg-mansion-800 dark:hover:bg-mansion-700"
+              className="group flex items-center gap-4 rounded-xl border border-slate-200 bg-white p-4 shadow-sm transition-colors hover:bg-slate-50 dark:border-slate-700 dark:bg-concrete-800 dark:hover:bg-concrete-700"
             >
               {/* Thumbnail / Icon */}
               {doc.thumbnail ? (

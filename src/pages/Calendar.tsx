@@ -40,7 +40,7 @@ export default function Calendar() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="font-serif text-2xl font-bold text-slate-900 dark:text-white">Calendar</h1>
+        <h1 className="font-display text-2xl font-bold text-slate-900 dark:text-white">Calendar</h1>
         <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
           {monthEvents.length} events this month
         </p>
@@ -48,7 +48,7 @@ export default function Calendar() {
 
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
         {/* Calendar grid */}
-        <div className="lg:col-span-2 rounded-xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-700 dark:bg-mansion-800">
+        <div className="lg:col-span-2 rounded-xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-700 dark:bg-concrete-800">
           {/* Month navigation */}
           <div className="mb-4 flex items-center justify-between">
             <button
@@ -57,7 +57,7 @@ export default function Calendar() {
             >
               <ChevronLeft size={18} />
             </button>
-            <h2 className="font-serif text-lg font-semibold text-slate-900 dark:text-white">
+            <h2 className="font-display text-lg font-semibold text-slate-900 dark:text-white">
               {format(currentMonth, 'MMMM yyyy')}
             </h2>
             <button
@@ -90,7 +90,7 @@ export default function Calendar() {
                   className={clsx(
                     'relative flex h-16 flex-col items-start rounded-lg p-1.5 text-left text-sm transition-colors',
                     selected
-                      ? 'bg-gold-50 ring-2 ring-gold-400 dark:bg-gold-900/30'
+                      ? 'bg-yolk-50 ring-2 ring-yolk-400 dark:bg-yolk-900/30'
                       : 'hover:bg-slate-50 dark:hover:bg-slate-700/50',
                     isToday(day) && !selected && 'bg-blue-50 dark:bg-blue-900/20'
                   )}
@@ -121,8 +121,8 @@ export default function Calendar() {
         {/* Event details / upcoming */}
         <div className="space-y-4">
           {selectedDate ? (
-            <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-700 dark:bg-mansion-800">
-              <h3 className="font-serif text-lg font-semibold text-slate-900 dark:text-white">
+            <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-700 dark:bg-concrete-800">
+              <h3 className="font-display text-lg font-semibold text-slate-900 dark:text-white">
                 {format(selectedDate, 'EEEE, MMMM d')}
               </h3>
               {selectedEvents.length > 0 ? (
@@ -154,8 +154,8 @@ export default function Calendar() {
               )}
             </div>
           ) : (
-            <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-700 dark:bg-mansion-800">
-              <h3 className="font-serif text-lg font-semibold text-slate-900 dark:text-white">Upcoming Events</h3>
+            <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-700 dark:bg-concrete-800">
+              <h3 className="font-display text-lg font-semibold text-slate-900 dark:text-white">Upcoming Events</h3>
               <div className="mt-4 space-y-3">
                 {monthEvents.sort((a, b) => a.date.localeCompare(b.date)).map(event => {
                   const Icon = eventTypeIcons[event.type];
@@ -181,7 +181,7 @@ export default function Calendar() {
           )}
 
           {/* Legend */}
-          <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-700 dark:bg-mansion-800">
+          <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-700 dark:bg-concrete-800">
             <h3 className="text-sm font-semibold text-slate-700 dark:text-slate-300">Event Types</h3>
             <div className="mt-3 space-y-2">
               {[

@@ -103,7 +103,7 @@ export default function FloorMap() {
     <div className="space-y-6">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <h1 className="font-serif text-2xl font-bold text-slate-900 dark:text-white">Floor Map</h1>
+          <h1 className="font-display text-2xl font-bold text-slate-900 dark:text-white">Floor Map</h1>
           <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
             Interactive property floor plans with linked photos
           </p>
@@ -114,7 +114,7 @@ export default function FloorMap() {
             className={clsx(
               'flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-medium transition-colors',
               isPlacing
-                ? 'bg-gold-500 text-white shadow-sm'
+                ? 'bg-yolk-500 text-white shadow-sm'
                 : 'border border-slate-200 text-slate-600 hover:bg-slate-50 dark:border-slate-600 dark:text-slate-300 dark:hover:bg-slate-800'
             )}
           >
@@ -135,7 +135,7 @@ export default function FloorMap() {
               className={clsx(
                 'rounded-lg border px-4 py-2 text-sm font-medium transition-colors',
                 selectedPlan.id === fp.id
-                  ? 'border-gold-400 bg-gold-50 text-gold-700 dark:border-gold-600 dark:bg-gold-900/30 dark:text-gold-400'
+                  ? 'border-yolk-400 bg-yolk-50 text-yolk-700 dark:border-yolk-600 dark:bg-yolk-900/30 dark:text-yolk-400'
                   : 'border-slate-200 text-slate-600 hover:bg-slate-50 dark:border-slate-600 dark:text-slate-300 dark:hover:bg-slate-800'
               )}
             >
@@ -148,11 +148,11 @@ export default function FloorMap() {
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
         {/* Map area */}
         <div className="lg:col-span-2">
-          <div className="rounded-xl border border-slate-200 bg-white shadow-sm dark:border-slate-700 dark:bg-mansion-800">
+          <div className="rounded-xl border border-slate-200 bg-white shadow-sm dark:border-slate-700 dark:bg-concrete-800">
             {/* Map header */}
             <div className="flex items-center justify-between border-b border-slate-200 p-4 dark:border-slate-700">
               <div>
-                <h2 className="font-serif text-lg font-semibold text-slate-900 dark:text-white">{selectedPlan.name}</h2>
+                <h2 className="font-display text-lg font-semibold text-slate-900 dark:text-white">{selectedPlan.name}</h2>
                 <p className="text-sm text-slate-500 dark:text-slate-400">{property?.address}</p>
               </div>
               <div className="flex items-center gap-1">
@@ -180,8 +180,8 @@ export default function FloorMap() {
                 className={clsx(
                   'relative mx-auto aspect-[4/3] rounded-lg border-2 transition-all',
                   isPlacing
-                    ? 'cursor-crosshair border-gold-400 bg-gold-50/30 dark:border-gold-500 dark:bg-gold-900/10'
-                    : 'border-slate-200 bg-slate-50 dark:border-slate-600 dark:bg-mansion-900'
+                    ? 'cursor-crosshair border-yolk-400 bg-yolk-50/30 dark:border-yolk-500 dark:bg-yolk-900/10'
+                    : 'border-slate-200 bg-slate-50 dark:border-slate-600 dark:bg-concrete-900'
                 )}
                 style={{ transform: `scale(${zoom})`, transformOrigin: 'top left' }}
               >
@@ -219,8 +219,8 @@ export default function FloorMap() {
                       className={clsx(
                         'flex h-8 w-8 items-center justify-center rounded-full shadow-lg transition-all',
                         selectedPin?.id === pin.id
-                          ? 'scale-125 bg-gold-500 text-white ring-4 ring-gold-200 dark:ring-gold-800'
-                          : 'bg-white text-gold-600 hover:scale-110 dark:bg-mansion-700 dark:text-gold-400'
+                          ? 'scale-125 bg-yolk-500 text-white ring-4 ring-yolk-200 dark:ring-yolk-800'
+                          : 'bg-white text-yolk-600 hover:scale-110 dark:bg-concrete-700 dark:text-yolk-400'
                       )}
                     >
                       <Camera size={14} />
@@ -228,7 +228,7 @@ export default function FloorMap() {
                     {/* Pin stem */}
                     <div className={clsx(
                       'mx-auto h-2 w-0.5',
-                      selectedPin?.id === pin.id ? 'bg-gold-500' : 'bg-slate-300 dark:bg-slate-500'
+                      selectedPin?.id === pin.id ? 'bg-yolk-500' : 'bg-slate-300 dark:bg-slate-500'
                     )} />
 
                     {/* Hover tooltip */}
@@ -243,7 +243,7 @@ export default function FloorMap() {
 
                 {isPlacing && (
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <p className="rounded-lg bg-gold-500/90 px-4 py-2 text-sm font-medium text-white shadow-lg">
+                    <p className="rounded-lg bg-yolk-500/90 px-4 py-2 text-sm font-medium text-white shadow-lg">
                       Click anywhere to place a photo pin
                     </p>
                   </div>
@@ -257,7 +257,7 @@ export default function FloorMap() {
         <div className="space-y-4">
           {/* Selected pin detail */}
           {selectedPin ? (
-            <div className="rounded-xl border border-slate-200 bg-white shadow-sm dark:border-slate-700 dark:bg-mansion-800">
+            <div className="rounded-xl border border-slate-200 bg-white shadow-sm dark:border-slate-700 dark:bg-concrete-800">
               <div className="relative">
                 <img
                   src={selectedPin.imageUrl}
@@ -272,7 +272,7 @@ export default function FloorMap() {
                 </button>
               </div>
               <div className="p-4">
-                <h3 className="font-serif text-lg font-semibold text-slate-900 dark:text-white">{selectedPin.label}</h3>
+                <h3 className="font-display text-lg font-semibold text-slate-900 dark:text-white">{selectedPin.label}</h3>
                 <p className="text-sm text-slate-500 dark:text-slate-400">{selectedPin.room}</p>
                 <div className="mt-3 flex items-center gap-2 text-xs text-slate-400">
                   <MapPin size={12} />
@@ -288,7 +288,7 @@ export default function FloorMap() {
               </div>
             </div>
           ) : (
-            <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-700 dark:bg-mansion-800">
+            <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-700 dark:bg-concrete-800">
               <div className="flex flex-col items-center py-4 text-center">
                 <Image size={32} className="text-slate-300 dark:text-slate-600" />
                 <p className="mt-3 text-sm font-medium text-slate-500 dark:text-slate-400">
@@ -302,8 +302,8 @@ export default function FloorMap() {
           )}
 
           {/* Pin list */}
-          <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-700 dark:bg-mansion-800">
-            <h3 className="font-serif text-lg font-semibold text-slate-900 dark:text-white">
+          <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-700 dark:bg-concrete-800">
+            <h3 className="font-display text-lg font-semibold text-slate-900 dark:text-white">
               Photo Points ({selectedPlan.pins.length})
             </h3>
             <div className="mt-3 space-y-2">
@@ -314,7 +314,7 @@ export default function FloorMap() {
                   className={clsx(
                     'flex w-full items-center gap-3 rounded-lg border p-2 text-left transition-colors',
                     selectedPin?.id === pin.id
-                      ? 'border-gold-300 bg-gold-50 dark:border-gold-700 dark:bg-gold-900/20'
+                      ? 'border-yolk-300 bg-yolk-50 dark:border-yolk-700 dark:bg-yolk-900/20'
                       : 'border-slate-100 hover:bg-slate-50 dark:border-slate-700 dark:hover:bg-slate-800'
                   )}
                 >
@@ -329,19 +329,19 @@ export default function FloorMap() {
           </div>
 
           {/* Legend */}
-          <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-700 dark:bg-mansion-800">
+          <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-700 dark:bg-concrete-800">
             <h3 className="text-sm font-semibold text-slate-700 dark:text-slate-300">How to use</h3>
             <ul className="mt-3 space-y-2 text-xs text-slate-500 dark:text-slate-400">
               <li className="flex items-start gap-2">
-                <Camera size={12} className="mt-0.5 text-gold-500" />
+                <Camera size={12} className="mt-0.5 text-yolk-500" />
                 Click pins on the map to view linked photos
               </li>
               <li className="flex items-start gap-2">
-                <Plus size={12} className="mt-0.5 text-gold-500" />
+                <Plus size={12} className="mt-0.5 text-yolk-500" />
                 Use &quot;Add Photo Pin&quot; then click the map to place new pins
               </li>
               <li className="flex items-start gap-2">
-                <ChevronDown size={12} className="mt-0.5 text-gold-500" />
+                <ChevronDown size={12} className="mt-0.5 text-yolk-500" />
                 Switch between floor plans using the tabs above
               </li>
             </ul>

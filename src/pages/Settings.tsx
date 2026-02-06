@@ -23,15 +23,15 @@ export default function Settings() {
   return (
     <div className="mx-auto max-w-3xl space-y-6">
       <div>
-        <h1 className="font-serif text-2xl font-bold text-slate-900 dark:text-white">Settings</h1>
+        <h1 className="font-display text-2xl font-bold text-slate-900 dark:text-white">Settings</h1>
         <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">Manage your account and application preferences</p>
       </div>
 
       {/* Profile */}
-      <section className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-700 dark:bg-mansion-800">
+      <section className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-700 dark:bg-concrete-800">
         <div className="flex items-center gap-3 mb-5">
-          <User size={20} className="text-gold-500" />
-          <h2 className="font-serif text-lg font-semibold text-slate-900 dark:text-white">Profile</h2>
+          <User size={20} className="text-yolk-500" />
+          <h2 className="font-display text-lg font-semibold text-slate-900 dark:text-white">Profile</h2>
         </div>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <div>
@@ -39,7 +39,7 @@ export default function Settings() {
             <input
               type="text"
               defaultValue="Victoria"
-              className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm dark:border-slate-600 dark:bg-mansion-900 dark:text-white"
+              className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm dark:border-slate-600 dark:bg-concrete-900 dark:text-white"
             />
           </div>
           <div>
@@ -47,7 +47,7 @@ export default function Settings() {
             <input
               type="text"
               defaultValue="Sterling"
-              className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm dark:border-slate-600 dark:bg-mansion-900 dark:text-white"
+              className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm dark:border-slate-600 dark:bg-concrete-900 dark:text-white"
             />
           </div>
           <div>
@@ -55,7 +55,7 @@ export default function Settings() {
             <input
               type="email"
               defaultValue="v.sterling@luxeestates.com"
-              className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm dark:border-slate-600 dark:bg-mansion-900 dark:text-white"
+              className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm dark:border-slate-600 dark:bg-concrete-900 dark:text-white"
             />
           </div>
           <div>
@@ -64,17 +64,17 @@ export default function Settings() {
               type="text"
               defaultValue="Portfolio Manager"
               disabled
-              className="w-full rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-500 dark:border-slate-600 dark:bg-mansion-900/50 dark:text-slate-400"
+              className="w-full rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-500 dark:border-slate-600 dark:bg-concrete-900/50 dark:text-slate-400"
             />
           </div>
         </div>
       </section>
 
       {/* Appearance */}
-      <section className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-700 dark:bg-mansion-800">
+      <section className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-700 dark:bg-concrete-800">
         <div className="flex items-center gap-3 mb-5">
-          {dark ? <Moon size={20} className="text-gold-500" /> : <Sun size={20} className="text-gold-500" />}
-          <h2 className="font-serif text-lg font-semibold text-slate-900 dark:text-white">Appearance</h2>
+          {dark ? <Moon size={20} className="text-yolk-500" /> : <Sun size={20} className="text-yolk-500" />}
+          <h2 className="font-display text-lg font-semibold text-slate-900 dark:text-white">Appearance</h2>
         </div>
         <div className="flex items-center justify-between">
           <div>
@@ -85,7 +85,7 @@ export default function Settings() {
             onClick={toggle}
             className={clsx(
               'relative h-7 w-12 rounded-full transition-colors',
-              dark ? 'bg-gold-500' : 'bg-slate-300'
+              dark ? 'bg-yolk-500' : 'bg-slate-300'
             )}
           >
             <span
@@ -99,10 +99,10 @@ export default function Settings() {
       </section>
 
       {/* Notifications */}
-      <section className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-700 dark:bg-mansion-800">
+      <section className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-700 dark:bg-concrete-800">
         <div className="flex items-center gap-3 mb-5">
-          <Bell size={20} className="text-gold-500" />
-          <h2 className="font-serif text-lg font-semibold text-slate-900 dark:text-white">Notifications</h2>
+          <Bell size={20} className="text-yolk-500" />
+          <h2 className="font-display text-lg font-semibold text-slate-900 dark:text-white">Notifications</h2>
         </div>
         <div className="space-y-4">
           {([
@@ -121,7 +121,7 @@ export default function Settings() {
                 onClick={() => setNotifications(n => ({ ...n, [item.key]: !n[item.key] }))}
                 className={clsx(
                   'relative h-7 w-12 rounded-full transition-colors',
-                  notifications[item.key] ? 'bg-gold-500' : 'bg-slate-300 dark:bg-slate-600'
+                  notifications[item.key] ? 'bg-yolk-500' : 'bg-slate-300 dark:bg-slate-600'
                 )}
               >
                 <span
@@ -137,10 +137,10 @@ export default function Settings() {
       </section>
 
       {/* Preferences */}
-      <section className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-700 dark:bg-mansion-800">
+      <section className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-700 dark:bg-concrete-800">
         <div className="flex items-center gap-3 mb-5">
-          <Globe size={20} className="text-gold-500" />
-          <h2 className="font-serif text-lg font-semibold text-slate-900 dark:text-white">Preferences</h2>
+          <Globe size={20} className="text-yolk-500" />
+          <h2 className="font-display text-lg font-semibold text-slate-900 dark:text-white">Preferences</h2>
         </div>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <div>
@@ -148,7 +148,7 @@ export default function Settings() {
             <select
               value={currency}
               onChange={e => setCurrency(e.target.value)}
-              className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm dark:border-slate-600 dark:bg-mansion-900 dark:text-white"
+              className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm dark:border-slate-600 dark:bg-concrete-900 dark:text-white"
             >
               <option value="USD">USD ($)</option>
               <option value="EUR">EUR (&euro;)</option>
@@ -158,7 +158,7 @@ export default function Settings() {
           </div>
           <div>
             <label className="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-300">Date Format</label>
-            <select className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm dark:border-slate-600 dark:bg-mansion-900 dark:text-white">
+            <select className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm dark:border-slate-600 dark:bg-concrete-900 dark:text-white">
               <option>MM/DD/YYYY</option>
               <option>DD/MM/YYYY</option>
               <option>YYYY-MM-DD</option>
@@ -168,16 +168,16 @@ export default function Settings() {
       </section>
 
       {/* Security */}
-      <section className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-700 dark:bg-mansion-800">
+      <section className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-700 dark:bg-concrete-800">
         <div className="flex items-center gap-3 mb-5">
-          <Shield size={20} className="text-gold-500" />
-          <h2 className="font-serif text-lg font-semibold text-slate-900 dark:text-white">Security</h2>
+          <Shield size={20} className="text-yolk-500" />
+          <h2 className="font-display text-lg font-semibold text-slate-900 dark:text-white">Security</h2>
         </div>
         <div className="space-y-4">
           <div>
             <p className="text-sm font-medium text-slate-700 dark:text-slate-300">Two-Factor Authentication</p>
             <p className="text-xs text-slate-500 dark:text-slate-400">Add an extra layer of security to your account</p>
-            <button className="mt-2 rounded-lg border border-gold-300 px-4 py-1.5 text-sm font-medium text-gold-700 hover:bg-gold-50 dark:border-gold-700 dark:text-gold-400 dark:hover:bg-gold-900/20">
+            <button className="mt-2 rounded-lg border border-yolk-300 px-4 py-1.5 text-sm font-medium text-yolk-700 hover:bg-yolk-50 dark:border-yolk-700 dark:text-yolk-400 dark:hover:bg-yolk-900/20">
               Enable 2FA
             </button>
           </div>
@@ -192,10 +192,10 @@ export default function Settings() {
       </section>
 
       {/* Company */}
-      <section className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-700 dark:bg-mansion-800">
+      <section className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-700 dark:bg-concrete-800">
         <div className="flex items-center gap-3 mb-5">
-          <Building2 size={20} className="text-gold-500" />
-          <h2 className="font-serif text-lg font-semibold text-slate-900 dark:text-white">Company</h2>
+          <Building2 size={20} className="text-yolk-500" />
+          <h2 className="font-display text-lg font-semibold text-slate-900 dark:text-white">Company</h2>
         </div>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <div>
@@ -203,7 +203,7 @@ export default function Settings() {
             <input
               type="text"
               defaultValue="LuxeEstates International"
-              className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm dark:border-slate-600 dark:bg-mansion-900 dark:text-white"
+              className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm dark:border-slate-600 dark:bg-concrete-900 dark:text-white"
             />
           </div>
           <div>
@@ -211,7 +211,7 @@ export default function Settings() {
             <input
               type="text"
               defaultValue="84-1234567"
-              className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm dark:border-slate-600 dark:bg-mansion-900 dark:text-white"
+              className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm dark:border-slate-600 dark:bg-concrete-900 dark:text-white"
             />
           </div>
         </div>
@@ -225,7 +225,7 @@ export default function Settings() {
             'flex items-center gap-2 rounded-lg px-6 py-2.5 text-sm font-semibold text-white shadow-sm transition-all',
             saved
               ? 'bg-emerald-500'
-              : 'bg-gradient-to-r from-gold-500 to-gold-700 hover:from-gold-600 hover:to-gold-800'
+              : 'bg-gradient-to-r from-yolk-500 to-yolk-700 hover:from-yolk-600 hover:to-yolk-800'
           )}
         >
           <Save size={16} />

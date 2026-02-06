@@ -71,10 +71,10 @@ export default function PropertyDetail() {
       <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
         <div>
           <div className="flex items-center gap-2">
-            <h1 className="font-serif text-3xl font-bold text-slate-900 dark:text-white">{property.name}</h1>
-            <div className="flex items-center gap-1 rounded-full bg-gold-50 px-2 py-0.5 dark:bg-gold-900/30">
-              <Star size={14} className="fill-gold-400 text-gold-400" />
-              <span className="text-sm font-semibold text-gold-700 dark:text-gold-400">{property.rating}</span>
+            <h1 className="font-display text-3xl font-bold text-slate-900 dark:text-white">{property.name}</h1>
+            <div className="flex items-center gap-1 rounded-full bg-yolk-50 px-2 py-0.5 dark:bg-yolk-900/30">
+              <Star size={14} className="fill-yolk-400 text-yolk-400" />
+              <span className="text-sm font-semibold text-yolk-700 dark:text-yolk-400">{property.rating}</span>
             </div>
           </div>
           <div className="mt-1 flex items-center gap-1 text-slate-500 dark:text-slate-400">
@@ -83,9 +83,9 @@ export default function PropertyDetail() {
           </div>
         </div>
         <div className="text-right">
-          <p className="font-serif text-3xl font-bold text-slate-900 dark:text-white">{formatFullCurrency(property.price)}</p>
+          <p className="font-display text-3xl font-bold text-slate-900 dark:text-white">{formatFullCurrency(property.price)}</p>
           <p className="text-sm text-slate-500 dark:text-slate-400">
-            Rent: <span className="font-semibold text-gold-600 dark:text-gold-400">{formatCurrency(property.monthlyRent)}/mo</span>
+            Rent: <span className="font-semibold text-yolk-600 dark:text-yolk-400">{formatCurrency(property.monthlyRent)}/mo</span>
           </p>
         </div>
       </div>
@@ -98,8 +98,8 @@ export default function PropertyDetail() {
           { icon: Maximize, label: 'Square Feet', value: property.sqft.toLocaleString() },
           { icon: Calendar, label: 'Year Built', value: property.yearBuilt },
         ].map(s => (
-          <div key={s.label} className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white p-4 dark:border-slate-700 dark:bg-mansion-800">
-            <s.icon size={20} className="text-gold-500" />
+          <div key={s.label} className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white p-4 dark:border-slate-700 dark:bg-concrete-800">
+            <s.icon size={20} className="text-yolk-500" />
             <div>
               <p className="text-xs text-slate-500 dark:text-slate-400">{s.label}</p>
               <p className="text-lg font-semibold text-slate-900 dark:text-white">{s.value}</p>
@@ -118,7 +118,7 @@ export default function PropertyDetail() {
               className={clsx(
                 'border-b-2 pb-3 text-sm font-medium capitalize transition-colors',
                 activeTab === tab
-                  ? 'border-gold-500 text-gold-700 dark:text-gold-400'
+                  ? 'border-yolk-500 text-yolk-700 dark:text-yolk-400'
                   : 'border-transparent text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-white'
               )}
             >
@@ -132,24 +132,24 @@ export default function PropertyDetail() {
       {activeTab === 'overview' && (
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
           <div className="lg:col-span-2 space-y-4">
-            <div className="rounded-xl border border-slate-200 bg-white p-6 dark:border-slate-700 dark:bg-mansion-800">
-              <h2 className="font-serif text-lg font-semibold text-slate-900 dark:text-white">Description</h2>
+            <div className="rounded-xl border border-slate-200 bg-white p-6 dark:border-slate-700 dark:bg-concrete-800">
+              <h2 className="font-display text-lg font-semibold text-slate-900 dark:text-white">Description</h2>
               <p className="mt-3 leading-relaxed text-slate-600 dark:text-slate-300">{property.description}</p>
             </div>
-            <div className="rounded-xl border border-slate-200 bg-white p-6 dark:border-slate-700 dark:bg-mansion-800">
-              <h2 className="font-serif text-lg font-semibold text-slate-900 dark:text-white">Property Type</h2>
-              <p className="mt-2 inline-block rounded-full bg-mansion-100 px-3 py-1 text-sm font-medium capitalize text-mansion-700 dark:bg-mansion-700 dark:text-mansion-200">
+            <div className="rounded-xl border border-slate-200 bg-white p-6 dark:border-slate-700 dark:bg-concrete-800">
+              <h2 className="font-display text-lg font-semibold text-slate-900 dark:text-white">Property Type</h2>
+              <p className="mt-2 inline-block rounded-full bg-concrete-100 px-3 py-1 text-sm font-medium capitalize text-concrete-700 dark:bg-concrete-700 dark:text-concrete-200">
                 {property.type}
               </p>
             </div>
           </div>
           {/* Tenant card */}
-          <div className="rounded-xl border border-slate-200 bg-white p-6 dark:border-slate-700 dark:bg-mansion-800">
-            <h2 className="font-serif text-lg font-semibold text-slate-900 dark:text-white">Current Tenant</h2>
+          <div className="rounded-xl border border-slate-200 bg-white p-6 dark:border-slate-700 dark:bg-concrete-800">
+            <h2 className="font-display text-lg font-semibold text-slate-900 dark:text-white">Current Tenant</h2>
             {tenant ? (
               <div className="mt-4 space-y-4">
                 <div className="flex items-center gap-3">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-gold-400 to-gold-600 font-semibold text-white">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-yolk-400 to-yolk-600 font-semibold text-white">
                     {tenant.avatar}
                   </div>
                   <div>
@@ -164,7 +164,7 @@ export default function PropertyDetail() {
                   </div>
                   <div className="flex justify-between">
                     <span className="text-slate-500 dark:text-slate-400">Monthly Rent</span>
-                    <span className="font-medium text-gold-600 dark:text-gold-400">{formatFullCurrency(tenant.monthlyRent)}</span>
+                    <span className="font-medium text-yolk-600 dark:text-yolk-400">{formatFullCurrency(tenant.monthlyRent)}</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-slate-500 dark:text-slate-400">Status</span>
@@ -186,8 +186,8 @@ export default function PropertyDetail() {
           {property.amenities.map(amenity => {
             const Icon = amenityIcons[amenity] || Home;
             return (
-              <div key={amenity} className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white p-4 dark:border-slate-700 dark:bg-mansion-800">
-                <div className="rounded-lg bg-gold-50 p-2 text-gold-600 dark:bg-gold-900/30 dark:text-gold-400">
+              <div key={amenity} className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white p-4 dark:border-slate-700 dark:bg-concrete-800">
+                <div className="rounded-lg bg-yolk-50 p-2 text-yolk-600 dark:bg-yolk-900/30 dark:text-yolk-400">
                   <Icon size={18} />
                 </div>
                 <span className="text-sm font-medium text-slate-700 dark:text-slate-200">{amenity}</span>
@@ -199,15 +199,15 @@ export default function PropertyDetail() {
 
       {activeTab === 'financials' && (
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-          <div className="rounded-xl border border-slate-200 bg-white p-6 dark:border-slate-700 dark:bg-mansion-800">
+          <div className="rounded-xl border border-slate-200 bg-white p-6 dark:border-slate-700 dark:bg-concrete-800">
             <p className="text-sm text-slate-500 dark:text-slate-400">Property Value</p>
             <p className="mt-1 text-2xl font-bold text-slate-900 dark:text-white">{formatFullCurrency(property.price)}</p>
           </div>
-          <div className="rounded-xl border border-slate-200 bg-white p-6 dark:border-slate-700 dark:bg-mansion-800">
+          <div className="rounded-xl border border-slate-200 bg-white p-6 dark:border-slate-700 dark:bg-concrete-800">
             <p className="text-sm text-slate-500 dark:text-slate-400">Monthly Revenue</p>
-            <p className="mt-1 text-2xl font-bold text-gold-600 dark:text-gold-400">{formatFullCurrency(property.monthlyRent)}</p>
+            <p className="mt-1 text-2xl font-bold text-yolk-600 dark:text-yolk-400">{formatFullCurrency(property.monthlyRent)}</p>
           </div>
-          <div className="rounded-xl border border-slate-200 bg-white p-6 dark:border-slate-700 dark:bg-mansion-800">
+          <div className="rounded-xl border border-slate-200 bg-white p-6 dark:border-slate-700 dark:bg-concrete-800">
             <p className="text-sm text-slate-500 dark:text-slate-400">Annual Yield</p>
             <p className="mt-1 text-2xl font-bold text-emerald-600 dark:text-emerald-400">
               {((property.monthlyRent * 12 / property.price) * 100).toFixed(2)}%

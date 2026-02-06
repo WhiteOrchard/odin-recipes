@@ -15,6 +15,7 @@ import {
 } from 'lucide-react';
 import { clsx } from 'clsx';
 import { useState } from 'react';
+import { APP_NAME } from '../brand/constants';
 
 const navItems = [
   { to: '/', icon: LayoutDashboard, label: 'Dashboard' },
@@ -34,19 +35,19 @@ export default function Sidebar() {
   return (
     <aside
       className={clsx(
-        'fixed left-0 top-0 z-40 flex h-screen flex-col border-r border-slate-200 bg-white transition-all duration-300 dark:border-slate-700 dark:bg-mansion-950',
+        'fixed left-0 top-0 z-40 flex h-screen flex-col border-r border-slate-200 bg-white transition-all duration-300 dark:border-slate-700 dark:bg-concrete-950',
         collapsed ? 'w-[72px]' : 'w-64'
       )}
     >
       {/* Logo */}
       <div className="flex h-16 items-center gap-3 border-b border-slate-200 px-4 dark:border-slate-700">
-        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-gold-500 to-gold-700 text-white">
+        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-yolk-500 to-yolk-700 text-white">
           <Crown size={20} />
         </div>
         {!collapsed && (
           <div className="overflow-hidden">
-            <h1 className="font-serif text-lg font-bold tracking-tight text-mansion-900 dark:text-white">
-              LuxeEstates
+            <h1 className="font-display text-lg font-bold tracking-tight text-concrete-900 dark:text-white">
+              {APP_NAME}
             </h1>
           </div>
         )}
@@ -63,7 +64,7 @@ export default function Sidebar() {
               clsx(
                 'flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors',
                 isActive
-                  ? 'bg-gold-50 text-gold-700 dark:bg-gold-900/30 dark:text-gold-400'
+                  ? 'bg-yolk-50 text-yolk-700 dark:bg-yolk-900/30 dark:text-yolk-400'
                   : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-white'
               )
             }

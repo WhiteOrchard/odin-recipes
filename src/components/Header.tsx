@@ -7,7 +7,7 @@ export default function Header() {
   const [searchOpen, setSearchOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-30 flex h-16 items-center justify-between border-b border-slate-200 bg-white/80 px-6 backdrop-blur-md dark:border-slate-700 dark:bg-mansion-950/80">
+    <header className="sticky top-0 z-30 flex h-16 items-center justify-between border-b border-slate-200 bg-white/80 px-6 backdrop-blur-md dark:border-slate-700 dark:bg-concrete-950/80">
       {/* Search */}
       <div className="flex items-center gap-3">
         {searchOpen ? (
@@ -51,7 +51,7 @@ export default function Header() {
         </button>
 
         <div className="ml-2 flex items-center gap-3 rounded-lg border border-slate-200 px-3 py-1.5 dark:border-slate-700">
-          <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-gold-400 to-gold-600 text-sm font-semibold text-white">
+          <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-yolk-400 to-yolk-600 text-sm font-semibold text-white">
             <User size={16} />
           </div>
           <div className="hidden sm:block">

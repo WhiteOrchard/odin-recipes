@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Crown, Mail, Lock, Eye, EyeOff, ArrowRight } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
+import { APP_NAME, APP_TAGLINE, APP_DESCRIPTION, COPYRIGHT, DEMO_EMAIL } from '../brand/constants';
 
 export default function Login() {
   const { signIn, signUp, isDemoMode } = useAuth();
@@ -27,27 +28,27 @@ export default function Login() {
 
   const handleDemoLogin = async () => {
     setLoading(true);
-    await signIn('demo@luxeestates.com', 'demo');
+    await signIn(DEMO_EMAIL, 'demo');
     setLoading(false);
   };
 
   return (
     <div className="flex min-h-screen">
       {/* Left side - branding */}
-      <div className="hidden w-1/2 flex-col justify-between bg-gradient-to-br from-mansion-900 via-mansion-800 to-mansion-950 p-12 lg:flex">
+      <div className="hidden w-1/2 flex-col justify-between bg-gradient-to-br from-concrete-900 via-concrete-800 to-concrete-950 p-12 lg:flex">
         <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-gold-400 to-gold-600 text-white">
+          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-yolk-400 to-yolk-600 text-white">
             <Crown size={22} />
           </div>
-          <span className="font-serif text-xl font-bold text-white">LuxeEstates</span>
+          <span className="font-display text-xl font-bold text-white">{APP_NAME}</span>
         </div>
 
         <div className="max-w-md">
-          <h1 className="font-serif text-4xl font-bold leading-tight text-white">
-            Manage your luxury portfolio with elegance
+          <h1 className="font-display text-4xl font-bold leading-tight text-white">
+            {APP_TAGLINE}
           </h1>
-          <p className="mt-4 text-lg text-mansion-300">
-            A comprehensive platform for managing high-end residential properties, tenants, and financials — all in one place.
+          <p className="mt-4 text-lg text-concrete-300">
+            {APP_DESCRIPTION}
           </p>
           <div className="mt-8 grid grid-cols-2 gap-4">
             {[
@@ -57,30 +58,30 @@ export default function Login() {
               { label: 'Countries', value: '24' },
             ].map(stat => (
               <div key={stat.label} className="rounded-lg bg-white/5 p-4 backdrop-blur-sm">
-                <p className="text-2xl font-bold text-gold-400">{stat.value}</p>
-                <p className="text-sm text-mansion-300">{stat.label}</p>
+                <p className="text-2xl font-bold text-yolk-400">{stat.value}</p>
+                <p className="text-sm text-concrete-300">{stat.label}</p>
               </div>
             ))}
           </div>
         </div>
 
-        <p className="text-sm text-mansion-400">
-          &copy; 2026 LuxeEstates International. All rights reserved.
+        <p className="text-sm text-concrete-400">
+          {COPYRIGHT}
         </p>
       </div>
 
       {/* Right side - form */}
-      <div className="flex w-full flex-col items-center justify-center bg-slate-50 px-6 dark:bg-mansion-900 lg:w-1/2">
+      <div className="flex w-full flex-col items-center justify-center bg-slate-50 px-6 dark:bg-concrete-900 lg:w-1/2">
         {/* Mobile logo */}
         <div className="mb-8 flex items-center gap-3 lg:hidden">
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-gold-400 to-gold-600 text-white">
+          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-yolk-400 to-yolk-600 text-white">
             <Crown size={22} />
           </div>
-          <span className="font-serif text-xl font-bold text-slate-900 dark:text-white">LuxeEstates</span>
+          <span className="font-display text-xl font-bold text-slate-900 dark:text-white">{APP_NAME}</span>
         </div>
 
         <div className="w-full max-w-md">
-          <h2 className="font-serif text-2xl font-bold text-slate-900 dark:text-white">
+          <h2 className="font-display text-2xl font-bold text-slate-900 dark:text-white">
             {isSignUp ? 'Create your account' : 'Welcome back'}
           </h2>
           <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
@@ -90,7 +91,7 @@ export default function Login() {
           <form onSubmit={handleSubmit} className="mt-8 space-y-4">
             <div>
               <label className="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-300">Email</label>
-              <div className="flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2.5 focus-within:border-gold-400 focus-within:ring-2 focus-within:ring-gold-100 dark:border-slate-600 dark:bg-mansion-800">
+              <div className="flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2.5 focus-within:border-yolk-400 focus-within:ring-2 focus-within:ring-yolk-100 dark:border-slate-600 dark:bg-concrete-800">
                 <Mail size={16} className="text-slate-400" />
                 <input
                   type="email"
@@ -105,7 +106,7 @@ export default function Login() {
 
             <div>
               <label className="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-300">Password</label>
-              <div className="flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2.5 focus-within:border-gold-400 focus-within:ring-2 focus-within:ring-gold-100 dark:border-slate-600 dark:bg-mansion-800">
+              <div className="flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2.5 focus-within:border-yolk-400 focus-within:ring-2 focus-within:ring-yolk-100 dark:border-slate-600 dark:bg-concrete-800">
                 <Lock size={16} className="text-slate-400" />
                 <input
                   type={showPassword ? 'text' : 'password'}
@@ -135,7 +136,7 @@ export default function Login() {
             <button
               type="submit"
               disabled={loading}
-              className="flex w-full items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-gold-500 to-gold-700 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition-all hover:from-gold-600 hover:to-gold-800 disabled:opacity-50"
+              className="flex w-full items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-yolk-500 to-yolk-700 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition-all hover:from-yolk-600 hover:to-yolk-800 disabled:opacity-50"
             >
               {loading ? (
                 <div className="h-4 w-4 animate-spin rounded-full border-2 border-white/30 border-t-white" />
@@ -162,7 +163,7 @@ export default function Login() {
             {isSignUp ? 'Already have an account?' : "Don't have an account?"}{' '}
             <button
               onClick={() => { setIsSignUp(s => !s); setError(''); }}
-              className="font-medium text-gold-600 hover:text-gold-700 dark:text-gold-400"
+              className="font-medium text-yolk-600 hover:text-yolk-700 dark:text-yolk-400"
             >
               {isSignUp ? 'Sign in' : 'Create one'}
             </button>

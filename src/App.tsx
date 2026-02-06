@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext';
 import Layout from './components/Layout';
+import { APP_NAME } from './brand/constants';
 import Dashboard from './pages/Dashboard';
 import Properties from './pages/Properties';
 import PropertyDetail from './pages/PropertyDetail';
@@ -19,10 +20,10 @@ function ProtectedApp() {
 
   if (loading) {
     return (
-      <div className="flex h-screen items-center justify-center bg-slate-50 dark:bg-mansion-900">
+      <div className="flex h-screen items-center justify-center bg-slate-50 dark:bg-concrete-900">
         <div className="text-center">
-          <div className="mx-auto h-10 w-10 animate-spin rounded-full border-4 border-gold-200 border-t-gold-600" />
-          <p className="mt-4 text-sm text-slate-500 dark:text-slate-400">Loading LuxeEstates...</p>
+          <div className="mx-auto h-10 w-10 animate-spin rounded-full border-4 border-yolk-200 border-t-yolk-600" />
+          <p className="mt-4 text-sm text-slate-500 dark:text-slate-400">Loading {APP_NAME}...</p>
         </div>
       </div>
     );

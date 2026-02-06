@@ -29,7 +29,7 @@ export default function Dashboard() {
     <div className="space-y-6">
       {/* Page heading */}
       <div>
-        <h1 className="font-serif text-2xl font-bold text-slate-900 dark:text-white">Portfolio Dashboard</h1>
+        <h1 className="font-display text-2xl font-bold text-slate-900 dark:text-white">Portfolio Dashboard</h1>
         <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
           Overview of your luxury property portfolio as of {format(new Date(), 'MMMM d, yyyy')}
         </p>
@@ -48,8 +48,8 @@ export default function Dashboard() {
       {/* Charts row */}
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
         {/* Revenue Chart */}
-        <div className="col-span-2 rounded-xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-700 dark:bg-mansion-800">
-          <h2 className="font-serif text-lg font-semibold text-slate-900 dark:text-white">Revenue & Expenses</h2>
+        <div className="col-span-2 rounded-xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-700 dark:bg-concrete-800">
+          <h2 className="font-display text-lg font-semibold text-slate-900 dark:text-white">Revenue & Expenses</h2>
           <p className="mb-4 text-sm text-slate-500 dark:text-slate-400">Last 12 months performance</p>
           <div className="h-72">
             <ResponsiveContainer width="100%" height="100%">
@@ -79,8 +79,8 @@ export default function Dashboard() {
         </div>
 
         {/* Property distribution */}
-        <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-700 dark:bg-mansion-800">
-          <h2 className="font-serif text-lg font-semibold text-slate-900 dark:text-white">Property Types</h2>
+        <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-700 dark:bg-concrete-800">
+          <h2 className="font-display text-lg font-semibold text-slate-900 dark:text-white">Property Types</h2>
           <p className="mb-4 text-sm text-slate-500 dark:text-slate-400">Portfolio distribution</p>
           <div className="h-52">
             <ResponsiveContainer width="100%" height="100%">
@@ -108,10 +108,10 @@ export default function Dashboard() {
       {/* Bottom row */}
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
         {/* Recent Maintenance */}
-        <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-700 dark:bg-mansion-800">
+        <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-700 dark:bg-concrete-800">
           <div className="flex items-center justify-between">
-            <h2 className="font-serif text-lg font-semibold text-slate-900 dark:text-white">Recent Maintenance</h2>
-            <Link to="/maintenance" className="text-sm font-medium text-gold-600 hover:text-gold-700 dark:text-gold-400">
+            <h2 className="font-display text-lg font-semibold text-slate-900 dark:text-white">Recent Maintenance</h2>
+            <Link to="/maintenance" className="text-sm font-medium text-yolk-600 hover:text-yolk-700 dark:text-yolk-400">
               View all
             </Link>
           </div>
@@ -136,10 +136,10 @@ export default function Dashboard() {
         </div>
 
         {/* Upcoming Events */}
-        <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-700 dark:bg-mansion-800">
+        <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-700 dark:bg-concrete-800">
           <div className="flex items-center justify-between">
-            <h2 className="font-serif text-lg font-semibold text-slate-900 dark:text-white">Upcoming Events</h2>
-            <Link to="/calendar" className="text-sm font-medium text-gold-600 hover:text-gold-700 dark:text-gold-400">
+            <h2 className="font-display text-lg font-semibold text-slate-900 dark:text-white">Upcoming Events</h2>
+            <Link to="/calendar" className="text-sm font-medium text-yolk-600 hover:text-yolk-700 dark:text-yolk-400">
               View calendar
             </Link>
           </div>

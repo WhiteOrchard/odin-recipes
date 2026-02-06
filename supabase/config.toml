@@ -1,6 +1,6 @@
 [project]
-id = "luxeestates"
-name = "LuxeEstates"
+id = "concrete"
+name = "Concrete"
 
 [api]
 port = 54321

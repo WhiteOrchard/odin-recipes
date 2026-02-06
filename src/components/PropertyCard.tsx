@@ -15,7 +15,7 @@ export default function PropertyCard({ property }: { property: Property }) {
   return (
     <Link
       to={`/properties/${property.id}`}
-      className="group overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-lg dark:border-slate-700 dark:bg-mansion-800"
+      className="group overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-lg dark:border-slate-700 dark:bg-concrete-800"
     >
       {/* Image */}
       <div className="relative h-52 overflow-hidden">
@@ -34,17 +34,17 @@ export default function PropertyCard({ property }: { property: Property }) {
           {property.status}
         </span>
         <div className="absolute bottom-3 left-3 flex items-center gap-1 text-white">
-          <Star size={14} className="fill-gold-400 text-gold-400" />
+          <Star size={14} className="fill-yolk-400 text-yolk-400" />
           <span className="text-sm font-medium">{property.rating}</span>
         </div>
-        <p className="absolute bottom-3 right-3 font-serif text-lg font-bold text-white">
+        <p className="absolute bottom-3 right-3 font-display text-lg font-bold text-white">
           {formatCurrency(property.price)}
         </p>
       </div>
 
       {/* Content */}
       <div className="p-4">
-        <h3 className="font-serif text-lg font-semibold text-slate-900 dark:text-white">
+        <h3 className="font-display text-lg font-semibold text-slate-900 dark:text-white">
           {property.name}
         </h3>
         <div className="mt-1 flex items-center gap-1 text-sm text-slate-500 dark:text-slate-400">
@@ -69,7 +69,7 @@ export default function PropertyCard({ property }: { property: Property }) {
 
         <div className="mt-3 text-sm">
           <span className="text-slate-400 dark:text-slate-500">Rent: </span>
-          <span className="font-semibold text-gold-600 dark:text-gold-400">
+          <span className="font-semibold text-yolk-600 dark:text-yolk-400">
             {formatCurrency(property.monthlyRent)}/mo
           </span>
         </div>

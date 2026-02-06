@@ -2,30 +2,44 @@
 
 @theme {
   --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
-  --font-serif: 'Playfair Display', ui-serif, Georgia, serif;
+  --font-display: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
 
-  --color-gold-50: #fefce8;
-  --color-gold-100: #fef9c3;
-  --color-gold-200: #fef08a;
-  --color-gold-300: #fde047;
-  --color-gold-400: #facc15;
-  --color-gold-500: #c8a415;
-  --color-gold-600: #a78b0e;
-  --color-gold-700: #856d0b;
-  --color-gold-800: #6b5709;
-  --color-gold-900: #4a3d08;
+  /* Sunny Yolk - accent color (use sparingly) */
+  --color-yolk-50: #fffef0;
+  --color-yolk-100: #fffbd6;
+  --color-yolk-200: #fff8ad;
+  --color-yolk-300: #fff484;
+  --color-yolk-400: #ffef6f;
+  --color-yolk-500: #FFEB5A;
+  --color-yolk-600: #e6d440;
+  --color-yolk-700: #ccbc2d;
+  --color-yolk-800: #b3a51e;
+  --color-yolk-900: #998d12;
 
-  --color-mansion-50: #f0f4f8;
-  --color-mansion-100: #d9e2ec;
-  --color-mansion-200: #bcccdc;
-  --color-mansion-300: #9fb3c8;
-  --color-mansion-400: #829ab1;
-  --color-mansion-500: #627d98;
-  --color-mansion-600: #486581;
-  --color-mansion-700: #334e68;
-  --color-mansion-800: #243b53;
-  --color-mansion-900: #102a43;
-  --color-mansion-950: #0a1929;
+  /* Cerulean Blue - background accent */
+  --color-cerulean-50: #f0f7ff;
+  --color-cerulean-100: #e0effe;
+  --color-cerulean-200: #C7DEFE;
+  --color-cerulean-300: #a8cbfd;
+  --color-cerulean-400: #8ab8fc;
+  --color-cerulean-500: #6ca5fb;
+  --color-cerulean-600: #5491e2;
+  --color-cerulean-700: #3d7dc9;
+  --color-cerulean-800: #2f6aaf;
+  --color-cerulean-900: #235696;
+
+  /* Monochrome base - Charcoal to Bright Ceramic */
+  --color-concrete-50: #F5F3EF;
+  --color-concrete-100: #e8e6e2;
+  --color-concrete-200: #d1ced5;
+  --color-concrete-300: #b9b5c8;
+  --color-concrete-400: #9a96a9;
+  --color-concrete-500: #7b778a;
+  --color-concrete-600: #5c586b;
+  --color-concrete-700: #3d394c;
+  --color-concrete-800: #2a2733;
+  --color-concrete-900: #1e1b26;
+  --color-concrete-950: #121212;
 }
 
 html {

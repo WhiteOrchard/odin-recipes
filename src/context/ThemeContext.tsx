@@ -9,13 +9,13 @@ const ThemeContext = createContext<ThemeContextType>({ dark: false, toggle: () =
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
   const [dark, setDark] = useState(() => {
-    const saved = localStorage.getItem('luxe-theme');
+    const saved = localStorage.getItem('concrete-theme');
     return saved === 'dark';
   });
 
   useEffect(() => {
     document.documentElement.classList.toggle('dark', dark);
-    localStorage.setItem('luxe-theme', dark ? 'dark' : 'light');
+    localStorage.setItem('concrete-theme', dark ? 'dark' : 'light');
   }, [dark]);
 
   return (

@@ -21,7 +21,7 @@ const colorMap = {
 
 export default function StatCard({ title, value, change, icon: Icon, color }: StatCardProps) {
   return (
-    <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition-shadow hover:shadow-md dark:border-slate-700 dark:bg-mansion-800">
+    <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition-shadow hover:shadow-md dark:border-slate-700 dark:bg-concrete-800">
       <div className="flex items-start justify-between">
         <div>
           <p className="text-sm font-medium text-slate-500 dark:text-slate-400">{title}</p>

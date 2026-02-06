@@ -44,25 +44,25 @@ export default function Maintenance() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="font-serif text-2xl font-bold text-slate-900 dark:text-white">Maintenance Requests</h1>
+        <h1 className="font-display text-2xl font-bold text-slate-900 dark:text-white">Maintenance Requests</h1>
         <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">{maintenanceRequests.length} total requests</p>
       </div>
 
       {/* Quick stats */}
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
-        <div className="rounded-xl border border-slate-200 bg-white p-4 dark:border-slate-700 dark:bg-mansion-800">
+        <div className="rounded-xl border border-slate-200 bg-white p-4 dark:border-slate-700 dark:bg-concrete-800">
           <p className="text-xs text-slate-500 dark:text-slate-400">Open</p>
           <p className="text-2xl font-bold text-blue-600 dark:text-blue-400">{stats.open}</p>
         </div>
-        <div className="rounded-xl border border-slate-200 bg-white p-4 dark:border-slate-700 dark:bg-mansion-800">
+        <div className="rounded-xl border border-slate-200 bg-white p-4 dark:border-slate-700 dark:bg-concrete-800">
           <p className="text-xs text-slate-500 dark:text-slate-400">In Progress</p>
           <p className="text-2xl font-bold text-amber-600 dark:text-amber-400">{stats.inProgress}</p>
         </div>
-        <div className="rounded-xl border border-slate-200 bg-white p-4 dark:border-slate-700 dark:bg-mansion-800">
+        <div className="rounded-xl border border-slate-200 bg-white p-4 dark:border-slate-700 dark:bg-concrete-800">
           <p className="text-xs text-slate-500 dark:text-slate-400">Resolved</p>
           <p className="text-2xl font-bold text-emerald-600 dark:text-emerald-400">{stats.resolved}</p>
         </div>
-        <div className="rounded-xl border border-slate-200 bg-white p-4 dark:border-slate-700 dark:bg-mansion-800">
+        <div className="rounded-xl border border-slate-200 bg-white p-4 dark:border-slate-700 dark:bg-concrete-800">
           <p className="text-xs text-slate-500 dark:text-slate-400">Est. Total Cost</p>
           <p className="text-2xl font-bold text-slate-900 dark:text-white">{formatFullCurrency(stats.totalCost)}</p>
         </div>
@@ -71,7 +71,7 @@ export default function Maintenance() {
       {/* Search and filters */}
       <div className="space-y-3">
         <div className="flex gap-2">
-          <div className="flex flex-1 items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2 dark:border-slate-600 dark:bg-mansion-800">
+          <div className="flex flex-1 items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2 dark:border-slate-600 dark:bg-concrete-800">
             <Search size={18} className="text-slate-400" />
             <input
               type="text"
@@ -86,7 +86,7 @@ export default function Maintenance() {
             className={clsx(
               'flex items-center gap-1.5 rounded-lg border px-3 py-2 text-sm font-medium',
               showFilters
-                ? 'border-gold-300 bg-gold-50 text-gold-700 dark:border-gold-700 dark:bg-gold-900/30 dark:text-gold-400'
+                ? 'border-yolk-300 bg-yolk-50 text-yolk-700 dark:border-yolk-700 dark:bg-yolk-900/30 dark:text-yolk-400'
                 : 'border-slate-200 text-slate-600 hover:bg-slate-50 dark:border-slate-600 dark:text-slate-300'
             )}
           >
@@ -96,13 +96,13 @@ export default function Maintenance() {
         </div>
 
         {showFilters && (
-          <div className="flex flex-wrap gap-3 rounded-lg border border-slate-200 bg-white p-4 dark:border-slate-700 dark:bg-mansion-800">
+          <div className="flex flex-wrap gap-3 rounded-lg border border-slate-200 bg-white p-4 dark:border-slate-700 dark:bg-concrete-800">
             <div>
               <label className="mb-1 block text-xs font-medium text-slate-500 dark:text-slate-400">Status</label>
               <select
                 value={statusFilter}
                 onChange={e => setStatusFilter(e.target.value as StatusFilter)}
-                className="rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-sm dark:border-slate-600 dark:bg-mansion-900 dark:text-white"
+                className="rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-sm dark:border-slate-600 dark:bg-concrete-900 dark:text-white"
               >
                 <option value="all">All</option>
                 <option value="open">Open</option>
@@ -116,7 +116,7 @@ export default function Maintenance() {
               <select
                 value={priorityFilter}
                 onChange={e => setPriorityFilter(e.target.value as PriorityFilter)}
-                className="rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-sm dark:border-slate-600 dark:bg-mansion-900 dark:text-white"
+                className="rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-sm dark:border-slate-600 dark:bg-concrete-900 dark:text-white"
               >
                 <option value="all">All</option>
                 <option value="urgent">Urgent</option>
@@ -140,7 +140,7 @@ export default function Maintenance() {
           return (
             <div
               key={req.id}
-              className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-700 dark:bg-mansion-800"
+              className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-700 dark:bg-concrete-800"
             >
               <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
                 <div className="flex items-start gap-3">
