@@ -106,6 +106,26 @@ export interface Database {
         Update: Partial<Database['public']['Tables']['payments']['Insert']>;
         Relationships: [];
       };
+      documents: {
+        Row: {
+          id: string;
+          created_at: string;
+          updated_at: string;
+          name: string;
+          file_name: string;
+          file_url: string;
+          file_size: number;
+          file_type: string;
+          category: string;
+          property_id: string | null;
+          tenant_id: string | null;
+          uploaded_by: string | null;
+          owner_id: string;
+        };
+        Insert: Omit<Database['public']['Tables']['documents']['Row'], 'id' | 'created_at' | 'updated_at'>;
+        Update: Partial<Database['public']['Tables']['documents']['Insert']>;
+        Relationships: [];
+      };
       floor_plans: {
         Row: {
           id: string;

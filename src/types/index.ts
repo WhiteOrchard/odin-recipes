@@ -97,3 +97,40 @@ export interface DashboardStats {
   pendingMaintenance: number;
   upcomingRenewals: number;
 }
+
+export interface Document {
+  id: string;
+  name: string;
+  fileName: string;
+  fileUrl: string;
+  fileSize: number;
+  fileType: string;
+  category: string;
+  propertyId?: string;
+  tenantId?: string;
+  uploadedAt: string;
+  uploadedBy?: string;
+}
+
+export interface PhotoPin {
+  id: string;
+  floorPlanId: string;
+  x: number;
+  y: number;
+  title: string;
+  description?: string;
+  type: 'annotation' | 'issue' | 'feature' | 'measurement';
+  createdAt: string;
+}
+
+export interface FloorPlan {
+  id: string;
+  propertyId: string;
+  name: string;
+  imageUrl: string;
+  fileSize?: number;
+  level?: string;
+  createdAt: string;
+  updatedAt: string;
+  photoPins?: PhotoPin[];
+}
