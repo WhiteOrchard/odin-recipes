@@ -1,5 +1,3 @@
-import { expect } from 'vitest';
-
 // Mock matchMedia (not available in jsdom)
 Object.defineProperty(window, 'matchMedia', {
   writable: true,

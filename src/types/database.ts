@@ -101,6 +101,64 @@ export interface Database {
         Insert: Omit<Database['public']['Tables']['payments']['Row'], 'id' | 'created_at'>;
         Update: Partial<Database['public']['Tables']['payments']['Insert']>;
       };
+      floor_plans: {
+        Row: {
+          id: string;
+          created_at: string;
+          updated_at: string;
+          property_id: string;
+          name: string;
+          floor: string;
+          image_path: string | null;
+          owner_id: string;
+        };
+        Insert: Omit<Database['public']['Tables']['floor_plans']['Row'], 'id' | 'created_at' | 'updated_at'>;
+        Update: Partial<Database['public']['Tables']['floor_plans']['Insert']>;
+      };
+      photo_pins: {
+        Row: {
+          id: string;
+          created_at: string;
+          updated_at: string;
+          floor_plan_id: string;
+          x_percent: number;
+          y_percent: number;
+          label: string;
+          room: string;
+          image_path: string;
+          title: string;
+          description: string;
+          status: string;
+          due_date: string | null;
+          owner_id: string;
+        };
+        Insert: Omit<Database['public']['Tables']['photo_pins']['Row'], 'id' | 'created_at' | 'updated_at'>;
+        Update: Partial<Database['public']['Tables']['photo_pins']['Insert']>;
+      };
+      pin_images: {
+        Row: {
+          id: string;
+          created_at: string;
+          pin_id: string;
+          image_path: string;
+          caption: string;
+          owner_id: string;
+        };
+        Insert: Omit<Database['public']['Tables']['pin_images']['Row'], 'id' | 'created_at'>;
+        Update: Partial<Database['public']['Tables']['pin_images']['Insert']>;
+      };
+      pin_comments: {
+        Row: {
+          id: string;
+          created_at: string;
+          pin_id: string;
+          text: string;
+          author_name: string;
+          owner_id: string;
+        };
+        Insert: Omit<Database['public']['Tables']['pin_comments']['Row'], 'id' | 'created_at'>;
+        Update: Partial<Database['public']['Tables']['pin_comments']['Insert']>;
+      };
     };
     Views: Record<string, never>;
     Functions: Record<string, never>;

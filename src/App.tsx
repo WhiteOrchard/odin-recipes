@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext';
 import Layout from './components/Layout';
 import { APP_NAME } from './brand/constants';
+import ErrorBoundary from './components/ErrorBoundary';
 import Dashboard from './pages/Dashboard';
 import Properties from './pages/Properties';
 import PropertyDetail from './pages/PropertyDetail';
@@ -53,12 +54,14 @@ function ProtectedApp() {
 
 export default function App() {
   return (
-    <BrowserRouter>
-      <ThemeProvider>
-        <AuthProvider>
-          <ProtectedApp />
-        </AuthProvider>
-      </ThemeProvider>
-    </BrowserRouter>
+    <ErrorBoundary>
+      <BrowserRouter>
+        <ThemeProvider>
+          <AuthProvider>
+            <ProtectedApp />
+          </AuthProvider>
+        </ThemeProvider>
+      </BrowserRouter>
+    </ErrorBoundary>
   );
 }
