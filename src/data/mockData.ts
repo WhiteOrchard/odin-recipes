@@ -67,7 +67,7 @@ export const properties: Property[] = [
     id: 'p4',
     name: 'Château de Lumière',
     type: 'chateau',
-    status: 'listed',
+    status: 'available',
     address: 'Route de Versailles',
     city: 'Versailles',
     country: 'France',
@@ -332,14 +332,11 @@ export const maintenanceRequests: MaintenanceRequest[] = [
 ];
 
 export const calendarEvents: CalendarEvent[] = [
-  { id: 'e1', title: 'Kensington Manor Viewing', date: '2026-02-10', time: '10:00', type: 'viewing', propertyId: 'p3', description: 'Private viewing for the Al-Maktoum family', color: '#3b82f6' },
   { id: 'e2', title: 'Pool Repair Follow-up', date: '2026-02-12', time: '14:00', type: 'maintenance', propertyId: 'p1', description: 'AquaTech return visit for pool heating', color: '#ef4444' },
   { id: 'e3', title: 'Château Inspection', date: '2026-02-15', time: '09:00', type: 'inspection', propertyId: 'p4', description: 'Annual structural inspection with heritage consultant', color: '#f59e0b' },
   { id: 'e4', title: 'Lease Renewal - Wellington', date: '2026-02-20', time: '11:00', type: 'lease-renewal', propertyId: 'p5', description: 'Discuss lease renewal terms with James Wellington III', color: '#10b981' },
-  { id: 'e5', title: 'Malibu Villa Open House', date: '2026-02-22', time: '16:00', type: 'viewing', propertyId: 'p7', description: 'Exclusive open house for qualified buyers', color: '#3b82f6' },
   { id: 'e6', title: 'Quarterly Portfolio Review', date: '2026-02-25', time: '10:00', type: 'meeting', description: 'Review Q1 financial performance across all properties', color: '#8b5cf6' },
   { id: 'e7', title: 'Copenhagen Renovation Check', date: '2026-02-28', time: '13:00', type: 'maintenance', propertyId: 'p6', description: 'Check progress on smart home system update', color: '#ef4444' },
-  { id: 'e8', title: 'Geneva Estate Viewing', date: '2026-03-02', time: '15:00', type: 'viewing', propertyId: 'p8', description: 'Tour for prospective buyer from Singapore', color: '#3b82f6' },
   { id: 'e9', title: 'Insurance Review Meeting', date: '2026-03-05', time: '09:30', type: 'meeting', description: 'Annual property insurance review with broker', color: '#8b5cf6' },
   { id: 'e10', title: 'Cannes Villa Garden Service', date: '2026-03-08', time: '08:00', type: 'maintenance', propertyId: 'p2', description: 'Spring garden service and olive tree pruning', color: '#ef4444' },
 ];

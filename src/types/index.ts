@@ -1,5 +1,5 @@
 export type PropertyType = 'penthouse' | 'villa' | 'estate' | 'mansion' | 'chateau' | 'townhouse';
-export type PropertyStatus = 'available' | 'occupied' | 'maintenance' | 'listed';
+export type PropertyStatus = 'available' | 'occupied' | 'maintenance';
 
 export interface Property {
   id: string;
@@ -68,7 +68,7 @@ export interface CalendarEvent {
   title: string;
   date: string;
   time: string;
-  type: 'viewing' | 'inspection' | 'maintenance' | 'lease-renewal' | 'meeting';
+  type: 'inspection' | 'maintenance' | 'lease-renewal' | 'meeting';
   propertyId?: string;
   description: string;
   color: string;

@@ -27,7 +27,7 @@ export default function Properties() {
   }, [search, typeFilter, statusFilter]);
 
   const types: (PropertyType | 'all')[] = ['all', 'penthouse', 'villa', 'estate', 'mansion', 'chateau', 'townhouse'];
-  const statuses: (PropertyStatus | 'all')[] = ['all', 'available', 'occupied', 'maintenance', 'listed'];
+  const statuses: (PropertyStatus | 'all')[] = ['all', 'available', 'occupied', 'maintenance'];
 
   return (
     <div className="space-y-6">

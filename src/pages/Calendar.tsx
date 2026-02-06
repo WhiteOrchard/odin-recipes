@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react';
-import { ChevronLeft, ChevronRight, Eye, Wrench, ClipboardCheck, FileText, Users } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Wrench, ClipboardCheck, FileText, Users } from 'lucide-react';
 import { clsx } from 'clsx';
 import {
   format, startOfMonth, endOfMonth, eachDayOfInterval, isSameMonth, isSameDay,
@@ -8,7 +8,6 @@ import {
 import { calendarEvents, properties } from '../data/mockData';
 
 const eventTypeIcons = {
-  viewing: Eye,
   inspection: ClipboardCheck,
   maintenance: Wrench,
   'lease-renewal': FileText,
@@ -185,7 +184,6 @@ export default function Calendar() {
             <h3 className="text-sm font-semibold text-slate-700 dark:text-slate-300">Event Types</h3>
             <div className="mt-3 space-y-2">
               {[
-                { type: 'Viewing', color: '#3b82f6' },
                 { type: 'Maintenance', color: '#ef4444' },
                 { type: 'Inspection', color: '#f59e0b' },
                 { type: 'Lease Renewal', color: '#10b981' },
